@@ -1,0 +1,9 @@
+---
+- name: Descargar y descomprimir 
+  unarchive:
+    src: "{{ url }}"
+    dest: "{{ home }}"
+    remote_src: yes    
+    
+- name: Mover el binario
+  shell: mv "{{ home }}/linux-amd64/helm" /usr/local/bin/helm  

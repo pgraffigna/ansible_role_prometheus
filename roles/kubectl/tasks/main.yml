@@ -1,0 +1,15 @@
+---
+- name: Descarga el binario
+  get_url:
+    url: "{{ URL }}"
+    dest: /tmp/kubectl
+
+- name: Cambia los permisos
+  file:
+    path: /tmp/kubectl
+    owner: "{{ usuario }}"
+    group: "{{ usuario }}"
+    mode: '0755'
+
+- name: Mover el binario
+  shell: mv /tmp/kubectl /usr/local/bin/
