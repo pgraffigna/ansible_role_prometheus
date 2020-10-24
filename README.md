@@ -10,5 +10,5 @@ roles:
 - minikube 
 - helm
 
-script:
+scripts:
 - prometheus
